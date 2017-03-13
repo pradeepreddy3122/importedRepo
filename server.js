@@ -8,17 +8,41 @@ app.use(morgan('combined'));
 var articleOne = {
     
     title:'Article One',
-    content:"  <h1>Article one html page</h1>"
-    
+    content:'Article one html page'
+
 };
 
-var template = "
+function createTemp(data) {
+    
+var title= data.title;
+var content = data.content;
+var template = `
+<html>
+<head>
+    <title>${title}</title>
+     <link href="/ui/style.css" rel="stylesheet" />
+</head>
 
+<body>
+    <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+    
+        <hr>
+    
+        <div>
+           <h1>${content}</h1>
+        </div>
+    
+    </div>
+</body>
 
+</html>
 
-
-";
-
+`;
+return template;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -32,7 +56,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/article-one',function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html')); 
+   res.send(createTemp(articleOne));
 });
 
 app.get('/article-two',function(req,res) {
