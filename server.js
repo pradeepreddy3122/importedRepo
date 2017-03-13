@@ -66,9 +66,6 @@ app.get('/:articleName',function(req,res) {
    res.send(createTemp(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res) {
-    res.send("article two requested");
-});
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
