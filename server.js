@@ -5,13 +5,19 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = {
+      'article-one' : {
     
     title:'Article One',
     content:'Article one html page'
-
+     },
+     
+     'article-two' : {
+          title:'Article Two',
+    content:'Article two html page'
+     }
+    
 };
-
 function createTemp(data) {
     
 var title= data.title;
@@ -55,8 +61,9 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article-one',function(req,res) {
-   res.send(createTemp(articleOne));
+app.get('/:articleName',function(req,res) {
+    var articleName = req.params.articleName;
+   res.send(createTemp(articles[articleName]));
 });
 
 app.get('/article-two',function(req,res) {
