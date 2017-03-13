@@ -12,30 +12,11 @@ var articleOne = {
     
 };
 
+var template = "
 
-  
-    var template = "<!DOCTYPE html>
-<head>
-    <title>Article One</title>
-     <link href="/ui/style.css" rel="stylesheet" />
-</head>
 
-<body>
-    <div class="container">
-        <div>
-            <a href="/">Home</a>
-        </div>
-    
-        <hr>
-    
-        <div>
-           <h1>Article one html page</h1>
-        </div>
-    
-    </div>
-</body>
 
-</html>
+
 ";
 
 app.get('/', function (req, res) {
