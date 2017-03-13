@@ -10,5 +10,5 @@ function move() {
 }
 
 img.onclick = function() {
-    var interval = setInterval(move,100);
+    var interval = setInterval(move,50);
 };
