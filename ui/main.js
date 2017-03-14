@@ -1,9 +1,10 @@
 var button = document.getElementById("butt");
 
 button.onclick = function() {
-//create a request
+  //create a request
 
    var request = new XMLHTTPRequest();
+
 // capture response and store it in a variable
 
 request.onreadystatechange = function() {
@@ -21,6 +22,6 @@ request.onreadystatechange = function() {
 
 // make request
 
-request.open('GET','http://http://shalikasampath.imad.hasura-app.io/count',true);
+request.open('GET','http://shalikasampath.imad.hasura-app.io/count',true);
 request.send(null);
 };
