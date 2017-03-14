@@ -2,6 +2,7 @@ var counter = 0;
 
 var button = document.getElementById("butt");
 
+button.onclick = function() {
 //create a request
 
    var request = new XMLHTTPRequest();
@@ -18,4 +19,10 @@ request.onreadystatechange = function() {
      }
  }
     
+};
+
+// make request
+
+request.open('GET','http://http://shalikasampath.imad.hasura-app.io/count',true);
+request.send(null);
 };
