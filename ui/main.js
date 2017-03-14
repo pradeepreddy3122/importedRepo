@@ -1,5 +1,3 @@
-var counter = 0;
-
 var button = document.getElementById("butt");
 
 button.onclick = function() {
